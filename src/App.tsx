@@ -23,8 +23,8 @@ function App() {
     const input = inputHeight!;
     const mData:Array<Nba> = data;
     for(let a of mData){
-      let LookUp = input - a.h_in;
-      let filtered = mData.find(i=>i.h_in===LookUp);
+      let LookUp:number = input - a.h_in;
+      let filtered = mData.find(i=>i.h_in==LookUp);
       if(filtered && filtered!==a){
         if(a.first_name>filtered.first_name){
           setFilteredData(prev=>new Set(prev.add(`${a.first_name} ${a.last_name} | ${filtered!.first_name} ${filtered!.last_name}`)))
